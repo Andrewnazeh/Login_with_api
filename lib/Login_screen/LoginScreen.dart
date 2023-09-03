@@ -29,7 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(color: Colors.white,fontSize: 50,fontWeight: FontWeight.bold),),
                     SizedBox(height: 80,),
                     Container(
-                      height: 550,
+
+                      height:550 ,
                       decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))
                           ,color:Colors.white ),
                       width: double.infinity,
@@ -51,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             SizedBox(height: 20,),
                             Text("EMAIL",style:TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
                             TextField(controller: _emailController,onChanged: (value) {
-                            },obscureText: true,keyboardType: TextInputType.emailAddress,
+                            },keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(hintText: "dvin.wong@gmail.com",
                                   filled: true ,suffixIcon: (IconButton(icon: Icon(Icons.verified_outlined),onPressed: (){},))  ), ),
                             SizedBox(height: 20,),
@@ -67,10 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                   }
                                   return InkWell(
                                     onTap: (){
-                                      if(_formKey.currentState!.validate()){
                                         context.read<LoginCubit>().login(email: _emailController.text,
                                             password: _passwordController.text);
-                                      }
+                                        print(state);
+
                                     },
                                     child: Container(width: 350,height: 60,
                                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:Colors.green ),

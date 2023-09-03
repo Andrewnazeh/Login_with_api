@@ -25,10 +25,8 @@ class LoginCubit extends Cubit<LoginState> {
         );
         loginModel=LoginModel.fromJson(response.data);
         if(loginModel.status==true){
-          // Get.offall(MainScreen());
           emit(LoginSuccessState());
         }else{
-          // Get.snackbar("Error", loginModel.message??"",backgroundColor: Colors.red);
           emit(LoginErrorState());
         }
       }catch(e){

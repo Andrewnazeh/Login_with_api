@@ -15,7 +15,8 @@ class DioHelper{
         connectTimeout: Duration(seconds: 60),
         receiveTimeout: Duration(seconds: 60),
         receiveDataWhenStatusError: true,
-        responseType: ResponseType.json
+        responseType: ResponseType.json,
+        headers: headers
       )
     );
   }
@@ -32,7 +33,6 @@ class DioHelper{
     Map<String,dynamic>? body,
     Map<String,dynamic>? queryparams
   }) async{
-
     final response=await dio!.post(path,data: body,queryParameters: queryparams);
     return response;
   }

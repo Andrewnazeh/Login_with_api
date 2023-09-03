@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:day4/Login_screen/Model/LoginModel.dart';
 import 'package:day4/helper/DioHelper.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 part 'login_state.dart';
 
@@ -25,8 +26,10 @@ class LoginCubit extends Cubit<LoginState> {
         );
         loginModel=LoginModel.fromJson(response.data);
         if(loginModel.status==true){
+
           emit(LoginSuccessState());
         }else{
+          Get.snackbar("Error", loginModel.message??"",backgroundColor: Colors.red);
           emit(LoginErrorState());
         }
       }catch(e){

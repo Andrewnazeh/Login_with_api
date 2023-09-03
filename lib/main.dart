@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import 'Login_screen/LoginScreen.dart';
 import 'Login_screen/cubit/login_cubit.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         //   create: (context) => SubjectBloc(),
         // ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         home:  LoginScreen(),
         debugShowCheckedModeBanner: false,
       ),

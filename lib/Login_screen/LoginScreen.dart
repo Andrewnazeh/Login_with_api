@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         context.read<LoginCubit>().login(email: _emailController.text,
                                             password: _passwordController.text);
                                         print(state);
-
+                                      // }
                                     },
                                     child: Container(width: 350,height: 60,
                                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:Colors.green ),
